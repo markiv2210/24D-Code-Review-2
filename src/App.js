@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import Header from './components/header/header';
+import RoadsComponent from './components/roads/roadsComponent';
+import BetBoard from './components/betBoard/betBoard';
+import StatsComponent from './components/statsBoard/statsComponent';
+import Footer from './components/footer/footer';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div class="game-ui">
+        <RoadsComponent />
+        <BetBoard />
+        <StatsComponent/>
+      </div>
+      <Footer />
     </div>
   );
 }
 
-export default App;

@@ -1,0 +1,362 @@
+.stats-container {
+  --stats-container-padding: auto;
+  --stats-container-gap: auto;
+  height: auto;
+  width: auto;
+  min-width: 260px;
+  max-width: 491px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 7px;
+  padding: var(--stats-container-padding);
+  box-sizing: border-box;
+  gap: var(--stats-container-gap);
+  justify-content: space-around;
+  border: 1px solid #3d3b3b;
+  justify-self: start;
+}
+
+.stats-tab-selector {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  height: 20%;
+}
+
+.stats-tab-selector button {
+  --height: auto;
+  --font-size: auto;
+  height: var(--height);
+  width: 50%;
+  background-color: #0f0f0f;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size);
+  font-weight: 600;
+  line-height: 135%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.roads-tab-selector button.selected {
+  background-color: #4e4e4e;
+}
+
+.stats-divider {
+  height: 15px;
+  width: 2px;
+  background-color: #4e4e4e;
+  border-radius: 4px;
+}
+
+.content {
+  --content-gap: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+  width: 100%;
+}
+
+.stats {
+  height: auto;
+  width: 100%;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.hotandcold {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.hot, .cold {
+  --gap: auto;
+  display: flex;
+  gap: var(--gap);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  --label-dimension: auto;
+  height: var(--label-dimension);
+  width: var(--label-dimension);
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.hot > .label {
+  background-color: #edb547;
+  box-shadow: 0px 1px 0px 0px #977530;
+}
+
+.cold > .label {
+  background-color: #20b5f5;
+  box-shadow: 0px 1px 0px 0px #1f6a85;
+}
+
+.ball {
+  --dimension: auto;
+  --ball-font-size: auto;
+  font-size: var(--ball-font-size);
+  font-weight: 600;
+  text-align: center;
+  height: var(--dimension);
+  width: var(--dimension);
+  border-radius: 50%;
+  background-color: #2c2c30;
+}
+
+.hot .ball:nth-child(2), .hot .ball:nth-child(3), .cold .ball:nth-child(2), .cold .ball:nth-child(3) {
+  background-color: #A10D1F;
+}
+
+.frame {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  position: relative;
+}
+
+.numbers {
+  --numbers-font-size: auto;
+  display: flex;
+  font-size: var(--numbers-font-size);
+  justify-content: space-around;
+  width: 100%;
+}
+
+.number {
+  height: 12px;
+  width: 5px;
+  font-weight: 600;
+}
+
+hr {
+  margin: 0;
+  border: 1px solid #4e4e4e;
+  width: 100%;
+  z-index: 0;
+}
+
+.hotframe, .coldframe, .extremehotframe {
+  --frame-width: auto;
+  width: var(--frame-width);
+  border-radius: 5px 5px 0px 0px;
+  z-index: 1;
+}
+
+.hotframe { background-color: #EDB547; }
+.coldframe { background-color: #20B5F5; }
+.extremehotframe { background-color: #9A4B23; }
+
+.top {
+  position: absolute;
+  top: 0;
+}
+
+.middle {
+  position: absolute;
+  top: 45%;
+}
+
+/* .plot1 { height: 67px; }
+.plot2 { height: 5px; }
+.plot3 { height: 36px; }
+.plot4 { height: 16px; }
+.plot5 { height: 36px; }
+.plot6 { height: 8px; }
+.plot7 { height: 36px; }
+.plot8 { height: 36px; }
+.plot9 { height: 36px; }
+.plot10 { height: 56px; }
+.plot11 { height: 67px; }
+.plot12 { height: 48px; }
+.plot13 { height: 48px; }
+.plot14 { height: 48px; }
+.plot15 { height: 33px; }
+.plot16 { height: 33px; }
+.plot17 { height: 77px; }
+.plot18 { height: 45px; }
+.plot19 { height: 8px; }
+.plot20 { height: 8px; }
+.plot21 { height: 79px; }
+.plot22 { height: 72px; }
+.plot23 { height: 74px; }
+.plot24 { height: 69px; } */
+
+.plot {
+  --barheight: auto;
+  height: var(--barheight);
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .stats-container {
+    --stats-container-padding: 6px;
+    --stats-container-gap: 18px;
+  }
+  
+  .stats-tab-selector button {
+    --height: 27px;
+    --font-size: 9px;
+  }
+  
+  .hotframe, .coldframe, .extremehotframe {
+    --frame-width: 5px;
+  }
+  
+  .numbers {
+    --numbers-font-size: 7px;
+  }
+  
+  .label {
+    --label-dimension: 9px;
+  }
+
+  .ball {
+    --ball-font-size: 10px;
+    --dimension:17px;
+  }
+  
+  .hot, .cold {
+    --gap: 3px;
+  }
+  
+  .plot {
+    --barheight: 52px;
+  }
+
+  .content {
+    --content-gap: 3px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1512px) {
+  .stats-container {
+    --stats-container-padding: 8px;
+    --stats-container-gap: 21px;
+    }
+    
+  .stats-tab-selector button {
+    --height: 36px;
+    --font-size: 12px;
+  }
+    
+  .hotframe, .coldframe, .extremehotframe {
+    --frame-width: 6px;
+  }
+    
+  .numbers {
+    --numbers-font-size: 10px;
+  }
+  
+  .label {
+    --label-dimension: 12px;
+  }
+  
+  .ball {
+    --ball-font-size: 12px;
+    --dimension: 20px;
+  }
+  
+  .hot, .cold {
+    --gap: 6px;
+  }
+  
+  .plot {
+    --barheight: 60px;
+  }
+  
+  .content {
+    --content-gap: 4px;
+  }
+}
+
+@media (min-width: 1512px) and (max-width: 1800px) {
+  .stats-container {
+    --stats-container-padding: 8px;
+    --stats-container-gap: 23px;
+  }
+  
+  .stats-tab-selector button {
+    --height: 36px;
+    --font-size: 12px;
+  }
+  
+  .hotframe, .coldframe, .extremehotframe {
+    --frame-width: 6px;
+  }
+  
+  .numbers {
+    --numbers-font-size: 10px;
+  }
+  
+  .label {
+    --label-dimension: 12px;
+  }
+  
+  .ball {
+    --ball-font-size: 14px;
+    --dimension: 22px;
+  }
+  
+  .hot, .cold {
+    --gap: 6px;
+  }
+  
+  .plot {
+    --barheight: 69px;
+  }
+
+  .content {
+    --content-gap: 4px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .stats-container {
+    --stats-container-padding: 10px;
+    --stats-container-gap: 29px;
+  }
+  
+  .stats-tab-selector button {
+    --height: 45px;
+    --font-size: 15px;
+  }
+  
+  .hotframe, .coldframe, .extremehotframe {
+    --frame-width: 8px;
+  }
+  
+  .numbers {
+    --numbers-font-size: 12px;
+  }
+  
+  .label {
+    --label-dimension: 15px;
+  }
+  
+  .ball {
+    --ball-font-size: 17px;
+    --dimension: 28px;
+  }
+  
+  .hot, .cold {
+    --gap: 7px;
+  }   
+  
+  .plot {
+    --barheight: 87px;
+  }
+
+  .content {
+    --content-gap: 5px;
+  }
+}

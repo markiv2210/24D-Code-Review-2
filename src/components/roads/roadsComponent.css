@@ -1,0 +1,291 @@
+.roads-container {
+  --roads-container-padding: auto;
+  height: auto;
+  width: auto;
+  min-width: 261px;
+  max-width: 492px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: var(--roads-container-padding);
+  box-sizing: border-box;
+  border: 1px solid #3d3b3b;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+  justify-self: end;
+}
+
+.roads-tab-selector {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  height: 20%;
+}
+
+.roads-tab-selector button {
+  --height: auto;
+  --font-size: auto;
+  height: var(--height);
+  width: 33%;
+  background-color: hsl(0, 0%, 6%);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size);
+  font-weight: 600;
+  line-height: 135%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.stats-tab-selector button.selected {
+  background-color: #4e4e4e;
+}
+
+.roads-divider {
+  height: 15px;
+  width: 2px;
+  background-color: #4e4e4e;
+  border-radius: 4px;
+}
+
+.roads-component {
+  --roads-component-padding: auto;
+  box-sizing: border-box;
+  /* height: 100%; */
+  width: 100%;
+  overflow-x: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: var(--roads-component-padding);
+  background-color: #cfcfcf;
+  border-radius: 2px;
+}
+
+.grid-container {
+  --grid-container-padding: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* background-color: #cfcfcf; */
+  background-color: white;
+  border-radius: 4px;
+  padding: var(--grid-container-padding);
+}
+
+.grid-container:hover {
+  .scroll-btn {
+    visibility: visible;
+  }
+}
+
+.grid-structure {
+  --cell-size: 14px;
+  --nrows: 6;
+  --ncols: 30;
+  display: grid;
+  grid-template-rows: repeat(var(--nrows), var(--cell-size));
+  grid-template-columns: repeat(var(--ncols), var(--cell-size));
+  gap: 1px 1px;
+  width: 100%;
+  min-width: calc(var(--cell-size) * 16);
+  border: 1px solid #cfcfcf;
+}
+
+.roads-cell {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-btn {
+  --scroll-btn-size: auto;
+  --scroll-btn-font-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--scroll-btn-size);
+  width: var(--scroll-btn-size);
+  font-size: var(--scroll-btn-font-size);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  visibility: hidden;
+  transition: visibility 0.2s ease-in-out;
+}
+
+.scroll-left {
+  left: var(--grid-container-padding);
+}
+
+.scroll-right {
+  right: var(--grid-container-padding);
+}
+
+/* @media (max-width: 768px) {
+  .scroll-btn {
+    display: none;
+  }
+} */
+
+.grid-structure .roads-cell:nth-child(30n + 1) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 3) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 5) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 7) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 9) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 11) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 13) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 15) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 17) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 19) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 21) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 23) .roads-ball, 
+.grid-structure .roads-cell:nth-child(30n + 25) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 27) .roads-ball,
+.grid-structure .roads-cell:nth-child(30n + 29) .roads-ball {
+  background-color: #A10D1F;
+}
+
+.roads-ball {
+  --dimension: auto;
+  --road-ball-font-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--road-ball-font-size);
+  height: var(--dimension);
+  width: var(--dimension);
+  border-radius: 50%;
+  background-color: black;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .roads-container {
+    --roads-container-padding: 6px;
+  }
+
+  .roads-tab-selector button {
+    --height: 25px;
+    --font-size: 9px;
+  }
+
+  .grid-structure {
+    --cell-size: 15px;
+  }
+
+  .roads-ball {
+    --dimension: 15px;
+    --road-ball-font-size: 9px;
+  }
+
+  .grid-container {
+    --grid-container-padding: 6px;
+  }
+
+  .scroll-btn {
+    --scroll-btn-size: 20px;
+    --scroll-btn-font-size: 12px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1512px) {
+  .roads-container {
+    --roads-container-padding: 7px;
+  }
+  
+  .roads-tab-selector button {
+    --height: 31px;
+    --font-size: 11px;
+  }
+  
+  .grid-structure {
+    --cell-size: 19px;
+  }
+  
+  .roads-ball {
+    --dimension: 18px;
+    --road-ball-font-size: 11px;
+  }
+  
+  .grid-container {
+    --grid-container-padding: 7px;
+  }
+
+  .scroll-btn {
+    --scroll-btn-size: 25px;
+    --scroll-btn-font-size: 18px;
+  }
+}
+
+@media (min-width: 1512px) and (max-width: 1800px) {
+  .roads-container {
+    --roads-container-padding: 8px;
+  }
+  
+  .roads-tab-selector button {
+    --height: 34px;
+    --font-size: 12px;
+  }
+  
+  .grid-structure {
+    --cell-size: 21px;
+  }
+  
+  .roads-ball {
+    --dimension: 20px;
+    --road-ball-font-size: 12px;
+  }
+  
+  .grid-container {
+    --grid-container-padding: 8px;
+  }
+
+  .scroll-btn {
+    --scroll-btn-size: 30px;
+    --scroll-btn-font-size: 20px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .roads-container {
+    --roads-container-padding: 10px;
+  }
+  
+  .roads-tab-selector button {
+    --height: 43px;
+    --font-size: 15px;
+  }
+  
+  .grid-structure {
+    --cell-size: 27px;
+  }
+  
+  .roads-ball {
+    --dimension: 25px;
+    --road-ball-font-size: 15px;
+  }
+  
+  .grid-container {
+    --grid-container-padding: 10px;
+  }
+
+  .scroll-btn {
+    --scroll-btn-size: 40px;
+    --scroll-btn-font-size: 25px;
+  }
+}
