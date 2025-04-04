@@ -14,7 +14,7 @@ body {
 }
 
 .roads-container, .stats-container, .betboard {
-  /* transition: all 0.2s ease; */
+  transition: all 0.2s ease;
 }
 
 .game-ui {
@@ -29,7 +29,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 10;
 }
 
 @media (max-width: 1023px) {
@@ -50,11 +50,10 @@ body {
     grid-column-gap: 12px;
   }
   
-  .betboard {
-    /* width: 453px; */
+  /* .betboard {
     --h: 232px;
     --w: 453px;
-  }
+  } */
 }
 
 @media (min-width: 1366px) and (max-width: 1512px) {
@@ -65,12 +64,11 @@ body {
   .game-ui {
     grid-column-gap: 15px;
   }
-  
+/*   
   .betboard {
-    /* width: 564px; */
     --h: 280px;
     --w: 564px;
-  }
+  } */
 }
 
 @media (min-width: 1512px) and (max-width: 1800px) {
@@ -82,11 +80,10 @@ body {
     grid-column-gap: 36px;
   }
   
-  .betboard {
-    /* width: 629px; */
+  /* .betboard {
     --h: 312px;
     --w: 629px;
-  }
+  } */
 }
 
 @media (min-width: 1800px) {
@@ -97,11 +94,11 @@ body {
   .game-ui {
     grid-column-gap: 15px;
   }
-
+/* 
   .betboard {
     --h: 373px;
     --w: 752px;
-  }
+  } */
 }
 
 /* @media (min-width: 1024px) and (max-width: 1800px) {
