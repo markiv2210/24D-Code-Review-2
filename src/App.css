@@ -10,26 +10,30 @@ body {
   margin: 0;
   padding: 0;
   background-color: green;
-  width: 100%;
-}
-
-.roads-container, .stats-container, .betboard {
-  transition: all 0.2s ease;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .game-ui {
-  width: 100%;
   padding: 8px 16px;
+  height: 100vh;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  justify-content: space-evenly;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   box-sizing: border-box;
   z-index: 10;
+  grid-column-gap: 36px;
+}
+
+.roads-container, .betboardParent, .stats-container {
+  align-self: end;
+}
+
+.roads-container, .stats-container {
+  margin-bottom: 64px;
 }
 
 @media (max-width: 1023px) {
@@ -37,80 +41,3 @@ body {
     display: none;
   }
 }
-
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .roads-container {
-    width: 261px;
-  }
-  .stats-container {
-    width: 260px;
-  }
-
-  .game-ui {
-    grid-column-gap: 12px;
-  }
-  
-  /* .betboard {
-    --h: 232px;
-    --w: 453px;
-  } */
-}
-
-@media (min-width: 1366px) and (max-width: 1512px) {
-  .roads-container, .stats-container {
-    width: 373px;
-  }
-
-  .game-ui {
-    grid-column-gap: 15px;
-  }
-/*   
-  .betboard {
-    --h: 280px;
-    --w: 564px;
-  } */
-}
-
-@media (min-width: 1512px) and (max-width: 1800px) {
-  .roads-container, .stats-container {
-    width: 389px;
-  }
-
-  .game-ui {
-    grid-column-gap: 36px;
-  }
-  
-  /* .betboard {
-    --h: 312px;
-    --w: 629px;
-  } */
-}
-
-@media (min-width: 1800px) {
-  .roads-container, .stats-container {
-    width: 493px;
-  }
-
-  .game-ui {
-    grid-column-gap: 15px;
-  }
-/* 
-  .betboard {
-    --h: 373px;
-    --w: 752px;
-  } */
-}
-
-/* @media (min-width: 1024px) and (max-width: 1800px) {
-  .roads-container, .stats-container, .betboard {
-    transform: scale(calc(1 + (1.1882077387167884 - 1) * ((100vw - 1024px) / (1800px - 1024px))));
-    transition: all 0.3s ease-in-out;
-  }
-} */
-
-/* @media (min-width: 2250px) {
-  .game-ui {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-} */

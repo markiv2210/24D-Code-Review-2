@@ -1,7 +1,10 @@
-/* .betboardParent{
-  position:relative;
-  bottom: 64px;
-} */
+.betboardParent{
+  height: 312px;
+  width: 629px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
 .betboard{
   display:grid;
   width:100%;
@@ -223,117 +226,19 @@
   border-bottom-right-radius: 6px;
 }
 
-
-
-
-/*  media queries
-font size
-line-heights
-height of thinline
-fr calculations for row and col spans*/
-
-/* done */
-
-/* media queries */
-/* @media (max-width:1024px){
-  .screen {
-      grid-template-columns: 0.27627fr 453px 0.27698fr;
-  }
-} */
-
-@media (max-width: 1023px){
-  .betboard{
-      visibility: hidden;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .betboardParent{
-      height:225px;
-  }
-  .betboard{
-      font-size: 12px;
-  }
-
-  .thinline{
-      font-size: 7px;
-  }
-  .fontSizeFourteen{
-      font-size:10px;
-  }
-  .fontSizeTen{
-      font-size: 7px;
-  }
-  .fontSizeTwelve{
-      font-size: 8px;
-  }
-}
-@media (min-width: 1366px) and (max-width: 1512px) {
-  .betboardParent{
-      height:280px;
-  }
-  .betboard{
-      font-size: 15px;
-  }
-
-  .thinline{
-      font-size: 9px;
-  }
-  .fontSizeFourteen{
-      font-size:13px;
-  }
-  .fontSizeTen{
-      font-size: 9px;
-  }
-  .fontSizeTwelve{
-      font-size: 11px;
-  }
-}
-@media (min-width: 1512px) and (max-width: 1800px) {
-  .betboard{
-      font-size: 16px;
-  }
-  .betboardParent{
-      height:312px;
-  }
-
-  .thinline{
-      font-size: 12px;
-  }
-  .fontSizeFourteen{
-      font-size:14px;
-  }
-  .fontSizeTen{
-      font-size: 10px;
-  }
-  .fontSizeTwelve{
-      font-size: 12px;
-  }
-
+.betboard{
+  font-size: 16px;
 }
 
-@media (min-width: 1800px) {
- 
-  .betboardParent{
-      height:373px;
-  }
-  .betboard{
-      font-size: 19px;
-  }
-
-  .thinline{
-      font-size: 14px;
-  }
-  .fontSizeFourteen{
-      font-size:16px;
-  }
-  .fontSizeTen{
-      font-size: 12px;
-  }
-  .fontSizeTwelve{
-      font-size: 14px;
-  }
+.thinline{
+  font-size: 12px;
 }
-
-
-
-
+.fontSizeFourteen{
+  font-size:14px;
+}
+.fontSizeTen{
+  font-size: 10px;
+}
+.fontSizeTwelve{
+  font-size: 12px;
+}
