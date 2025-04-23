@@ -2,10 +2,10 @@ import './header.css'
 
 export default function Header() {
   return (
-    <div class="header">
+    <div className="header">
       Header Component
-      {/* <div class="title">
-        <button class="icon" id="close">
+      {/* <div className="title">
+        <button className="icon" id="close">
           
         </button>
         

@@ -31,6 +31,9 @@ body {
   align-self: end;
 }
 
+.roads-container { justify-self: end; }
+.stats-container { justify-self: start; }
+
 .roads-container, .stats-container {
   margin-bottom: 64px;
 }

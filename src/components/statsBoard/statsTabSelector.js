@@ -15,7 +15,7 @@ export default function StatsTabSelector({ onTabChange }) {
   };
 
   return (
-    <div className="roads-tab-selector">
+    <div className="stats-tab-selector">
       {tabs.map((tab) => (
         <button
           key={tab.name}

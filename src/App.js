@@ -23,7 +23,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="game-ui">
+    <div className="game-ui" style={{ transform: `scale(${scaleFactor})`, transformOrigin: 'bottom center' }}>
       <RoadsComponent />
       <BetBoard />
       <StatsComponent />

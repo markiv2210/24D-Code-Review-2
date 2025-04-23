@@ -12,7 +12,7 @@ export default function StatsComponent() {
   };
 
   return (
-    <div className="roads-container">
+    <div className="stats-container">
       <StatsTabSelector onTabChange={handleTabChange} />
       <StatsTabComponent selectedTab={selectedTab}/>
     </div>
