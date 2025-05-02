@@ -1,244 +1,295 @@
 .betboardParent{
-  height: 312px;
-  width: 629px;
-  width: 100%;
+  width: 623px;
   aspect-ratio: 16 / 9;
 }
 
-.betboard{
-  display:grid;
+.betboardParent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 2.0159;
+  position: relative;
+}
+
+.background{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width:100%;
-  height:100%;
-  grid-template-columns: 93fr 36fr 367fr 36fr 93fr;
-  grid-template-rows: 46fr 168fr 45fr 48fr;
+  background-image: url('betboardbackground.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  aspect-ratio: 2.015;
+  background-position: center;
+}
+.betboard {
+  position: relative;
+  display: grid;
+  width: calc(100% - 12px);
+  aspect-ratio: 2.056;
+  grid-template-columns: 90fr 36fr 363fr 36fr 90fr;
   box-sizing: border-box;
- 
-  gap:2px;
+  grid-template-rows: 45fr 168fr 44fr 40fr;
+
+  gap: 2px;
   text-align: center;
-  font-family: "poppins";
-  font-size: 16px;
-  font-weight: 600;
+  font-family: "Onest";
+  font-size: 20px;
+  font-weight: 800;
   line-height: 135%;
   padding: 0px;
   margin: 0px;
   color: #FFFFFF;
-
-  max-width: 753px;
-  justify-self: center;
 }
 
-.mainThinLine{
+
+.mainThinLine {
   grid-column-start: 1;
   grid-column-end: 7;
 }
-.thinline{
+
+.thinline {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size:10px;
-  line-height:10px;
-  height:12px;
-  font-weight: normal;
-  background-color: #2F2D2D;
-  opacity: 0.8;
- 
+  font-size: 10px;
+
+  height: 10px;
+  font-weight: 400;
+  background-color: #2C352E;
+
+
 }
-.cell{
-  flex-grow:1;
-  display:flex;
+
+.cell {
+  flex-grow: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.8;
+  flex-direction: column;
+
 }
 
 
-.rangeOfBets{
-  display:flex;
- 
+.rangeOfBets {
+
+  position: relative;
+  display: flex;
   flex-direction: column;
   grid-column-start: 2;
   grid-column-end: 5;
-  opacity: 0.8;
- 
+
+}
+.rightSideBetsCell{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.places {
+  display: flex;
+}
+.ordinals{
+  line-height:115%;
+  font-size:10px
 }
 
-.parentForTopRangeCells{
- 
-  display:grid;
+.parentForTopRangeCells {
+
+  display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(6, 1fr);
-  height:auto;
+  height: auto;
   flex-grow: 1;
 }
-.bgColorBlack{
-  background-color: #1d1d1d;
-  opacity:0.8
+
+.parentForTopRangeCells>div:first-child {
+  border-top-left-radius: 6px;
 }
 
-.leftMarkers{
-  display:flex;
+.parentForTopRangeCells>div:last-child {
+  border-top-right-radius: 6px;
+}
+
+.bgColorBlack {
+  background-color: #1B1B1B;
+  opacity: 0.37
+}
+
+.leftMarkers {
+  position: relative;
+  display: flex;
   flex-direction: column;
   grid-column-start: 1;
 }
 
 
 
-.rightMarker{
-  display:flex;
-  flex-direction: column;
-}
-
-.mainBets{
- 
-  grid-column-start: 2;
-  grid-column-end:5;
-  display:grid;
-  grid-template-columns: repeat(6,1fr);
-  grid-template-rows: repeat(4,1fr);
-}
-.mainRed{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background-color:#A10D1F ;
-}
-.mainBlack{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #151517;
-}
-
-
-.leftBottom{
-  grid-column: 1 / 3;
-  grid-row: 3 / 5;
-  opacity: 0.8;
+.rightMarker {
   display: flex;
   flex-direction: column;
- 
-}
-.flexGenProp{
-  flex:1
+  position: relative;
 }
 
 
-.bottomRight{
+.mainBets {
+  position: relative;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.mainRed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BF1E24;
+}
+
+.mainBlack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171719;
+}
+
+
+.leftBottom {
+  grid-column: 1 / 3;
+  grid-row: 3 / 5;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.flexGenProp {
+  flex: 1
+}
+
+
+.bottomRight {
   grid-column: 4/6;
   grid-row: 3 / 5;
   display: flex;
   flex-direction: column;
-  opacity: 0.8;
- 
+  position: relative
 }
 
-.bottomMiddleUpper{
-  display:flex;
+
+.bottomMiddleUpper {
+  display: flex;
   flex-direction: column;
- 
- 
+  position: relative;
 }
-.parentForBottomRangeCells{
-  opacity: 0.8;
-  display:grid;
+
+.parentForBottomRangeCells {
+  display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(5, 1fr);
-  height:auto;
+  height: auto;
   flex-grow: 1;
-  margin-top:1px;
+  margin-top: 1px;
 }
-.bottomMiddleLower{
-  display:flex;
-  grid-row-end:5;
+
+.bottomMiddleLower {
+  display: flex;
+  grid-row-end: 5;
+  position: relative
 }
-.lowerRed{
-  width:50%;
-  display:flex;
+.lowerRed {
+  padding-bottom: 5px;
+  width: 50%;
+  display: flex;
   justify-content: center;
   align-items: end;
-  background-color:#A10D1F ;
+  background-color: #B41E24;
 }
-.lowerBlack{
-  width:50%;
-  display:flex;
+
+.lowerBlack {
+  padding-bottom: 5px;
+  width: 50%;
+  display: flex;
   justify-content: center;
   align-items: end;
-  background-color:#151517 ;
+  background-color: #171719;
 }
 
 /* cosmetic changes */
 
-.borderTR{
- 
-  border-top: 1px solid #3D3B3B;
-  border-right: 1px solid #3D3B3B ;
-}
-.borderL{
-  border-left: 1px solid #3D3B3B;
- 
-}
-.borderD{
-  border-bottom: 1px solid #3D3B3B;
-}
-.borderproperties{
-  display:flex;
-  justify-content: center;
-  align-items: center;;
-  height: 100%;
- 
+.borderTR {
+  
+  border-top: 1px solid #343434;;
+  border-right: 1px solid #343434;;
+  z-index: 1;
 }
 
-.fontSizeTwelve{
-  font-size: 12px;
-  color:#f5f5f5;
-  opacity:0.8;
-  font-weight:normal;
+.borderL {
+  border-left: 1px solid #343434;
+}
+
+.borderD {
+  border-bottom: 1px solid #343434;
+}
+
+.borderproperties {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ;
+  height: 100%;
+
+}
+
+.fontSizeRow {
+  font-size: 10px;
+  color: #f5f5f5;
+  font-weight: 400;
   line-height: 9px;
 }
-.fontSizeFourteen{
+
+.fontSizeTopRange {
   font-size: 14px;
+  line-height: 115%;
+  font-weight: 700;
 }
-.fontSizeTen{
+
+.fontSizeRatio {
   font-size: 10px;
-  font-weight:normal;
-  opacity: 0.5;
+  font-weight: 400;
+  line-height: 10px;
 }
-.lineHeightFourteen{
+
+.lineHeghtFourteen {
   line-height: 14px;
 }
 
-.col{
-  display:flex;
+.lineHeghtSeventeen {
+  line-height: 17px;
+}
+
+.col {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.borderTopLeft{
+.borderTopLeft {
   border-top-left-radius: 6px;
-}.borderTopRight{
+}
+
+.borderTopRight {
   border-top-right-radius: 6px;
-}.borderBottomLeft{
+}
+
+.borderBottomLeft {
   border-bottom-left-radius: 6px;
-}.borderBottomRight{
+}
+
+.borderBottomRight {
   border-bottom-right-radius: 6px;
-}
-
-.betboard{
-  font-size: 16px;
-}
-
-.thinline{
-  font-size: 12px;
-}
-.fontSizeFourteen{
-  font-size:14px;
-}
-.fontSizeTen{
-  font-size: 10px;
-}
-.fontSizeTwelve{
-  font-size: 12px;
 }

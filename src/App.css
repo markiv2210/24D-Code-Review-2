@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-      
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
 * {
   font-family: Poppins;
   color: #fff;
@@ -9,7 +10,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: green;
+  background-color: black;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -24,7 +25,7 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   box-sizing: border-box;
-  grid-column-gap: 36px;
+  grid-column-gap: 33px;
 }
 
 .roads-container, .betboardParent, .stats-container {

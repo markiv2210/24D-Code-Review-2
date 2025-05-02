@@ -5,6 +5,9 @@
   border-radius: 10px;
   border: 1px solid #9A6C40;
   background: rgba(0, 2, 10, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .stats-tab-selector {
@@ -60,12 +63,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: 135%; /* 16.2px */
-}
-
-.stats-dot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .row :nth-child(1) .stats-ball, 
@@ -133,3 +130,113 @@
 .stats-tab-selector .selected {
   border-bottom: 2px solid white;
 }
+
+/* Hot and Cold Tab */
+
+.hot-and-cold-tab {
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  gap: 7px;
+}
+
+.hot-and-cold-label {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.hot-label, .cold-label {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.stats-cell {
+  height: 21px;
+  width: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-ball {
+  height: calc(100% - 1px);
+  width: calc(100% - 1px);
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFF;
+  text-align: center;
+  font-variant-numeric: stacked-fractions;
+  font-family: Onest;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 135%; /* 16.2px */
+}
+
+.hot-label > .stats-cell:nth-child(2) .stats-ball,
+.hot-label > .stats-cell:nth-child(3) .stats-ball {
+  background: #AB1D23;
+}
+
+.hot-label > .stats-cell:nth-child(4) .stats-ball,
+.hot-label > .stats-cell:nth-child(5) .stats-ball,
+.hot-label > .stats-cell:nth-child(6) .stats-ball {
+  background: #2E2E2F;
+}
+
+.cold-label > .stats-cell:nth-child(2) .stats-ball, 
+.cold-label > .stats-cell:nth-child(3) .stats-ball {
+  background: #AB1D23;
+}
+
+.cold-label > .stats-cell:nth-child(4) .stats-ball,
+.cold-label > .stats-cell:nth-child(5) .stats-ball,
+.cold-label > .stats-cell:nth-child(6) .stats-ball {
+  background: #2E2E2F;
+}
+
+.stats-frame {
+  position: relative;
+  height: auto;
+}
+
+hr {
+  margin: 0;
+  border: 1px solid #282722;
+  z-index: 0;
+}
+
+.frame {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.numbers {
+  display: flex;
+  font-size: 10px;
+  justify-content: space-around;
+  color: #FFF;
+
+  font-weight: 600;
+  line-height: 135%; 
+}
+
+.hotframe, .coldframe, .extremehotframe {
+  height: 69px;
+  width: 6px;
+  border-radius: 5px 5px 0px 0px;
+  z-index: 1;
+}
+
+.hotframe { background-color: #FF6B2B; }
+.coldframe { background-color: #41A7F2; }
+.extremehotframe { background-color: #535353; }
